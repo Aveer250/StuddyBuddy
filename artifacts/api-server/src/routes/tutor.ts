@@ -38,26 +38,34 @@ router.post("/tutor/help", async (req, res): Promise<void> => {
       ...history.map((turn) => ({
         role: turn.role,
         content: turn.content,
-      })),
-      {
-        role: "user",
-        content: `Subject: ${subject}${topic ? `\nTopic: ${topic}` : ""}\nQuestion: ${question}`,
-      },
-    ];
+        })),
+     {
+  role: "user",
+  content: `Subject: ${subject}${topic ? `\nTopic: ${topic}` : ""}\nQuestion: ${question}`,
+},
+;
+  
+        const completion = await client.chat.completions.create({
+          model: "gpt-4o-mini",
+          max_completion_tokens: 1000,
+          messages,
+        });
+        
 
-    const completion 
-      max_completion_tokens: 8192,
-      messages,
-    });
-    const answer = completion.choices[0]?.message.content?.trim();
+        const answer = completion.choices[0]?.message?.content?.trim();
 
-    if (!answer) {
-      req.log.warn("Study tutor returned an empty response");
-      res.status(502).json({
-        error: "The tutor could not make an explanation just now. Please try again.",
-      });
-      return;
-    }
+        if (!answer) {
+          throw new Error("Empty tutor response");
+        }
+
+        
+      
+      
+
+      
+        
+      
+    
 
     res.json(GetTutorHelpResponse.parse({ answer }));
   } catch {
