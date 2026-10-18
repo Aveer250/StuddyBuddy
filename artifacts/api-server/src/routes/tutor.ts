@@ -61,27 +61,9 @@ router.post("/tutor/help", async (req, res): Promise<void> => {
     }
 
     res.json(GetTutorHelpResponse.parse({ answer }));
-  } catch (error) {
-    // Log only provider metadata; never log a key, prompt, or provider body.
-    const providerError = error as { status?: unknown; code?: unknown };
-    const providerStatus =
-      typeof providerError.status === "number" ? providerError.status : undefined;
-    const providerCode =
-      typeof providerError.code === "string" ? providerError.code : undefined;
-    req.log.warn({ providerStatus, providerCode }, "Study tutor request failed");
-
-    if (providerStatus === 401 || providerStatus === 403) {
-      res.status(503).json({
-        error: "The tutor service needs attention. Please ask a grown-up to check the app setup.",
-      });
-      return;
-    }
-    if (providerStatus === 429) {
-      res.status(503).json({
-        error: "The tutor is busy right now. Please wait a moment and try again.",
-      });
-      return;
-    }
+  } catch {
+    // Do not log prompts or provider errors that might contain student text.
+    req.log.warn("Study tutor request failed");
     res.status(502).json({
       error: "The tutor is having trouble right now. Please try again in a moment.",
     });
