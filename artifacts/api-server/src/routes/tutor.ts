@@ -81,7 +81,7 @@ router.post("/tutor/help", async (req, res): Promise<void> => {
     );
     const invalidApiKey =
       details.status === 401 && details.code === "invalid_api_key";
-    res.status(502).json({
+    res.status(invalidApiKey ? 503 : 502).json({
       error: invalidApiKey
         ? "The AI tutor is not connected yet. Please try again later."
         : "The tutor is having trouble right now. Please try again in a moment.",
