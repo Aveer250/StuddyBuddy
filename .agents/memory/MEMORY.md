@@ -1,0 +1,1 @@
+- [AI provider choice](ai-provider-choice.md) — use the owner's OpenAI key; do not retry the declined managed AI setup.
