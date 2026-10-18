@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "studdybuddy"
+description = "A colorful, responsive study buddy for 11-year-old learners, with daily Maths, Science, English and General Knowledge practice, lessons, progress tracking, points, and a private AI tutor that teaches through hints and step-by-step explanations. The first version uses sample learning content and collects no personal information."
+version = "1.0.0"
+id = "artifacts/studdybuddy"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20442
+
+[services.development]
+run = "pnpm --filter @workspace/studdybuddy run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/studdybuddy", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/studdybuddy/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20442"
+BASE_PATH = "/"
