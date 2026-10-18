@@ -61,11 +61,30 @@ router.post("/tutor/help", async (req, res): Promise<void> => {
     }
 
     res.json(GetTutorHelpResponse.parse({ answer }));
-  } catch {
-    // Do not log prompts or provider errors that might contain student text.
-    req.log.warn("Study tutor request failed");
+  } catch (error) {
+    // Log only provider metadata; never log the key, request, or student text.
+    const details =
+      typeof error === "object" && error !== null
+        ? (error as Record<string, unknown>)
+        : {};
+    req.log.warn(
+      {
+        provider: "openai",
+        model: "gpt-4o-mini",
+        errorName:
+          typeof details.name === "string" ? details.name : "UnknownError",
+        status: typeof details.status === "number" ? details.status : undefined,
+        code: typeof details.code === "string" ? details.code : undefined,
+        type: typeof details.type === "string" ? details.type : undefined,
+      },
+      "Study tutor provider request failed",
+    );
+    const invalidApiKey =
+      details.status === 401 && details.code === "invalid_api_key";
     res.status(502).json({
-      error: "The tutor is having trouble right now. Please try again in a moment.",
+      error: invalidApiKey
+        ? "The AI tutor is not connected yet. Please try again later."
+        : "The tutor is having trouble right now. Please try again in a moment.",
     });
   }
 });
