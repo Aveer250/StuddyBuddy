@@ -45,8 +45,7 @@ router.post("/tutor/help", async (req, res): Promise<void> => {
       },
     ];
 
-    const completion = await client.chat.completions.create({
-      model: "gpt-5.6-terra",
+    const completion 
       max_completion_tokens: 8192,
       messages,
     });
