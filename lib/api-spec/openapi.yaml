@@ -10,6 +10,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: tutor
+    description: Private AI study tutor
 paths:
   /healthz:
     get:
@@ -24,6 +26,43 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /tutor/help:
+    post:
+      operationId: getTutorHelp
+      tags: [tutor]
+      summary: Get a guided explanation from the study tutor
+      description: Answers a learner's question with age-appropriate hints and steps. Tutor requests are not persisted by the application.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TutorRequest"
+      responses:
+        "200":
+          description: Tutor guidance
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TutorReply"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+        "429":
+          description: Too many tutor requests
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+        "502":
+          description: Tutor is temporarily unavailable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +72,53 @@ components:
           type: string
       required:
         - status
+    TutorRequest:
+      type: object
+      properties:
+        subject:
+          type: string
+          enum: [Maths, Science, English, SST, General Knowledge]
+        question:
+          type: string
+          minLength: 1
+          maxLength: 2000
+        topic:
+          type: string
+          maxLength: 120
+        history:
+          type: array
+          maxItems: 8
+          items:
+            $ref: "#/components/schemas/TutorTurn"
+      required:
+        - subject
+        - question
+    TutorTurn:
+      type: object
+      properties:
+        role:
+          type: string
+          enum: [user, assistant]
+        content:
+          type: string
+          minLength: 1
+          maxLength: 1200
+      required:
+        - role
+        - content
+    TutorReply:
+      type: object
+      properties:
+        answer:
+          type: string
+          minLength: 1
+      required:
+        - answer
+    ApiError:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+        - error
 

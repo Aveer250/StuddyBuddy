@@ -1,6 +1,6 @@
-# [Project name]
+# studdybuddy
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A colourful, responsive study companion for 11-year-old learners, with daily practice, short lessons, progress tracking, and a private AI tutor.
 
 ## Run & Operate
 
@@ -34,7 +34,8 @@ _Describe the high-level user-facing capabilities of this app once they exist._
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- No public chat, advertising, or collection of children's personal information.
+- The tutor should teach with hints and steps rather than simply giving homework answers.
 
 ## Gotchas
 

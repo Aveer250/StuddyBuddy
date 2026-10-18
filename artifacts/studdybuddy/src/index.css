@@ -78,72 +78,45 @@
   --elevate-1: rgba(0, 0, 0, 0.03);
   --elevate-2: rgba(0, 0, 0, 0.08);
 
-  --background: red; /*replace with H S L */
+  --background: 42 61% 96%;
+  --foreground: 226 30% 18%;
+  --border: 41 30% 86%;
+  --card: 0 0% 100%;
+  --card-foreground: 226 30% 18%;
+  --card-border: 41 30% 86%;
+  --sidebar: 42 61% 96%;
+  --sidebar-foreground: 226 30% 18%;
+  --sidebar-border: 41 30% 86%;
+  --sidebar-primary: 226 72% 54%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 43 88% 89%;
+  --sidebar-accent-foreground: 226 30% 18%;
+  --sidebar-ring: 226 72% 54%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 226 30% 18%;
+  --popover-border: 41 30% 86%;
+  --primary: 226 72% 54%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 156 51% 83%;
+  --secondary-foreground: 226 30% 18%;
+  --muted: 42 46% 91%;
+  --muted-foreground: 225 12% 46%;
+  --accent: 11 86% 70%;
+  --accent-foreground: 226 30% 18%;
+  --destructive: 0 72% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 41 30% 86%;
+  --ring: 226 72% 54%;
+  --chart-1: 226 72% 54%;
+  --chart-2: 156 51% 61%;
+  --chart-3: 11 86% 70%;
+  --chart-4: 43 88% 67%;
+  --chart-5: 269 45% 70%;
 
-  --foreground: red; /*replace with H S L */
-
-  --border: red; /*replace with H S L */
-
-  --card: red; /*replace with H S L */
-
-  --card-foreground: red; /*replace with H S L */
-
-  --card-border: red; /*replace with H S L */
-
-  --sidebar: red; /*replace with H S L */
-
-  --sidebar-foreground: red; /*replace with H S L */
-
-  --sidebar-border: red; /*replace with H S L */
-
-  --sidebar-primary: red; /*replace with H S L */
-
-  --sidebar-primary-foreground: red; /*replace with H S L */
-
-  --sidebar-accent: red; /*replace with H S L */
-
-  --sidebar-accent-foreground: red; /*replace with H S L */
-
-  --sidebar-ring: red; /*replace with H S L */
-
-  --popover: red; /*replace with H S L */
-
-  --popover-foreground: red; /*replace with H S L */
-
-  --popover-border: red; /*replace with H S L */
-
-  --primary: red; /*replace with H S L */
-
-  --primary-foreground: red; /*replace with H S L */
-
-  --secondary: red; /*replace with H S L */
-
-  --secondary-foreground: red; /*replace with H S L */
-
-  --muted: red; /*replace with H S L */
-
-  --muted-foreground: red; /*replace with H S L */
-
-  --accent: red; /*replace with H S L */
-
-  --accent-foreground: red; /*replace with H S L */
-
-  --destructive: red; /*replace with H S L */
-
-  --destructive-foreground: red; /*replace with H S L */
-
-  --input: red; /*replace with H S L */
-  --ring: red; /*replace with H S L */
-  --chart-1: red; /*replace with H S L */
-  --chart-2: red; /*replace with H S L */
-  --chart-3: red; /*replace with H S L */
-  --chart-4: red; /*replace with H S L */
-  --chart-5: red; /*replace with H S L */
-
-  --app-font-sans: 'Inter', sans-serif;
+  --app-font-sans: ui-rounded, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --app-font-serif: Georgia, serif;
-  --app-font-mono: Menlo, monospace;
-  --radius: 0.5rem; /* 8px */
+  --app-font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --radius: 1rem;
   --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0); /*replace with H S L */
   --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0); /*replace with H S L */
   --shadow-sm:
@@ -227,68 +200,42 @@
   --elevate-1: rgba(255, 255, 255, 0.04);
   --elevate-2: rgba(255, 255, 255, 0.09);
 
-  --background: red; /*replace with H S L */
-
-  --foreground: red; /*replace with H S L */
-
-  --border: red; /*replace with H S L */
-
-  --card: red; /*replace with H S L */
-
-  --card-foreground: red; /*replace with H S L */
-
-  --card-border: red; /*replace with H S L */
-
-  --sidebar: red; /*replace with H S L */
-
-  --sidebar-foreground: red; /*replace with H S L */
-
-  --sidebar-border: red; /*replace with H S L */
-
-  --sidebar-primary: red; /*replace with H S L */
-
-  --sidebar-primary-foreground: red; /*replace with H S L */
-
-  --sidebar-accent: red; /*replace with H S L */
-
-  --sidebar-accent-foreground: red; /*replace with H S L */
-
-  --sidebar-ring: red; /*replace with H S L */
-
-  --popover: red; /*replace with H S L */
-
-  --popover-foreground: red; /*replace with H S L */
-
-  --popover-border: red; /*replace with H S L */
-
-  --primary: red; /*replace with H S L */
-
-  --primary-foreground: red; /*replace with H S L */
-
-  --secondary: red; /*replace with H S L */
-
-  --secondary-foreground: red; /*replace with H S L */
-
-  --muted: red; /*replace with H S L */
-
-  --muted-foreground: red; /*replace with H S L */
-
-  --accent: red; /*replace with H S L */
-
-  --accent-foreground: red; /*replace with H S L */
-
-  --destructive: red; /*replace with H S L */
-
-  --destructive-foreground: red; /*replace with H S L */
+  --background: 225 22% 13%;
+  --foreground: 42 61% 96%;
+  --border: 225 16% 26%;
+  --card: 225 20% 17%;
+  --card-foreground: 42 61% 96%;
+  --card-border: 225 16% 26%;
+  --sidebar: 225 22% 13%;
+  --sidebar-foreground: 42 61% 96%;
+  --sidebar-border: 225 16% 26%;
+  --sidebar-primary: 226 72% 64%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 225 16% 26%;
+  --sidebar-accent-foreground: 42 61% 96%;
+  --sidebar-ring: 226 72% 64%;
+  --popover: 225 20% 17%;
+  --popover-foreground: 42 61% 96%;
+  --popover-border: 225 16% 26%;
+  --primary: 226 72% 64%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 156 41% 45%;
+  --secondary-foreground: 42 61% 96%;
+  --muted: 225 16% 26%;
+  --muted-foreground: 220 12% 72%;
+  --accent: 11 76% 62%;
+  --accent-foreground: 225 22% 13%;
+  --destructive: 0 72% 55%;
+  --destructive-foreground: 0 0% 100%;
 
   /* Used as the border around inputs. Dark mode: Should be a border that is light enough to have high contrast when rendered on a --card background. More contrast than standard --border */
-  --input: red; /*replace with H S L */
-  --ring: red; /*replace with H S L */
-  --chart-1: red; /*replace with H S L */
-  --chart-2: red; /*replace with H S L */
-  --chart-3: red; /*replace with H S L */
-  --chart-4: red; /*replace with H S L */
-  --chart-5: red; /*replace with H S L */
+  --input: 225 16% 26%;
+  --ring: 226 72% 64%;
+  --chart-1: 226 72% 64%;
+  --chart-2: 156 51% 61%;
+  --chart-3: 11 86% 70%;
+  --chart-4: 43 88% 67%;
+  --chart-5: 269 45% 70%;
 
   --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0);
   --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0);
@@ -430,4 +377,50 @@
   .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
     inset: -1px;
   }
+}
+
+@layer base {
+  body { font-family: var(--app-font-sans); background: #f8f5ec; }
+  button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+}
+
+.display-font { font-family: ui-rounded, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.app-shell { min-height: 100dvh; background: #f8f5ec; color: #252b45; }
+.layout-grid { display: grid; grid-template-columns: 248px minmax(0, 1fr); max-width: 1480px; margin: 0 auto; min-height: 100dvh; }
+.sidebar { padding: 28px 18px; border-right: 1px solid #e9e2d1; position: sticky; top: 0; height: 100dvh; display: flex; flex-direction: column; }
+.main-area { min-width: 0; padding: 38px clamp(20px, 5vw, 68px) 64px; }
+.nav-link { display: flex; align-items: center; gap: 12px; border-radius: 14px; padding: 12px 14px; color: #656a7d; font-weight: 700; transition: background .2s, color .2s, transform .2s; }
+.nav-link:hover { background: #fff; color: #252b45; transform: translateX(2px); }
+.nav-link.active { color: #fff; background: #4c61d8; box-shadow: 0 6px 14px #4c61d82e; }
+.surface { background: #fff; border: 1px solid #e9e2d1; border-radius: 24px; box-shadow: 0 8px 24px #43455908; }
+.subject-tile { transition: transform .22s, box-shadow .22s; }
+.subject-tile:hover { transform: translateY(-4px); box-shadow: 0 15px 30px #30365216; }
+.robot { width: 132px; height: 132px; position: relative; border-radius: 42px; background: #fff7de; border: 4px solid #28304f; box-shadow: 0 8px 0 #28304f; transform: rotate(-5deg); }
+.robot:before { content: ''; position: absolute; width: 26px; height: 16px; border-radius: 12px 12px 0 0; border: 4px solid #28304f; border-bottom: 0; left: 49px; top: -20px; }
+.robot:after { content: ''; position: absolute; height: 17px; width: 17px; border-radius: 50%; background: #f0846e; border: 4px solid #28304f; left: 54px; top: -30px; }
+.robot-face { position: absolute; inset: 24px 17px 26px; border: 4px solid #28304f; border-radius: 27px; background: #bdebd8; display: flex; align-items: center; justify-content: center; gap: 15px; }
+.robot-eye { height: 11px; width: 11px; background: #28304f; border-radius: 50%; position: relative; }
+.robot-eye:after { content: ''; width: 5px; height: 3px; border-radius: 50%; background: white; position: absolute; top: 2px; left: 2px; }
+.robot-mouth { position: absolute; height: 8px; width: 21px; bottom: 26px; left: 52px; border-bottom: 3px solid #28304f; border-radius: 0 0 20px 20px; }
+.spark { animation: floaty 3.5s ease-in-out infinite; }
+@keyframes floaty { 50% { transform: translateY(-7px) rotate(3deg); } }
+.page-enter { animation: enter .4s ease both; }
+@keyframes enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.progress-track { background: #eee9df; border-radius: 99px; overflow: hidden; height: 9px; }
+.progress-fill { height: 100%; background: #4c61d8; border-radius: inherit; transition: width .35s ease; }
+.bottom-nav { display: none; }
+@media (max-width: 800px) {
+  .layout-grid { display: block; padding-bottom: 82px; }
+  .sidebar { display: none; }
+  .main-area { padding: 24px 18px 42px; }
+  .bottom-nav { display: flex; position: fixed; z-index: 20; bottom: 0; left: 0; right: 0; background: #fffdf7; border-top: 1px solid #e9e2d1; padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); justify-content: space-around; }
+  .bottom-nav a { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 10px; font-weight: 700; color: #777b8c; padding: 6px 8px; }
+  .bottom-nav a.active { color: #4c61d8; }
+}
+@media (max-width: 520px) {
+  .robot { width: 96px; height: 96px; border-radius: 32px; border-width: 3px; box-shadow: 0 6px 0 #28304f; }
+  .robot:before { left: 34px; top: -17px; border-width: 3px; }
+  .robot:after { left: 38px; top: -27px; border-width: 3px; }
+  .robot-face { inset: 17px 12px 18px; border-width: 3px; gap: 12px; }
+  .robot-mouth { left: 37px; bottom: 18px; }
 }
